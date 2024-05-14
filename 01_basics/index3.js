@@ -11,26 +11,26 @@
 // null(null ek class hai yaad rkhna interview me puchh skta hai);
 // undefined
 
-// console.log(typeof "hitesh")
-// console.log(typeof age)
-// console.log(typeof null)
-// console.log(typeof undefined)
+console.log(typeof "hitesh")
+console.log(typeof age)
+console.log(typeof null)
+console.log(typeof undefined)
 
-// let score=33
-// console.log(typeof(score)) // ishka jo type hoga we number hoga (n->small)
+let score=33
+console.log(typeof(score)) // ishka jo type hoga we number hoga (n->small)
 
-// let points="33"
-// console.log(typeof points)// ishka jo type hai we string hai let suppose we have to conert it into number
+let points="33"
+ console.log(typeof points)// ishka jo type hai we string hai let suppose we have to conert it into number
 // converting string 33 to number
 
-// let valueInNumber=Number(points)// yaad rkhna capitalletter wala N use krenge yha number mein;
-// console.log(typeof valueInNumber)
+let valueInNumber=Number(points)// yaad rkhna capitalletter wala N use krenge yha number mein;
+console.log(typeof valueInNumber)
 
-// let points2="33abs"
-// let valueInNumber2=Number(points2)
+let points2="33abs"
+let valueInNumber2=Number(points2)
 
-// console.log(typeof valueInNumber2)
-// console.log(valueInNumber2)
+console.log(typeof valueInNumber2)
+console.log(valueInNumber2)
 
 // imp--dekho dekhne me lgega ki valueInNumber2 ka type number jo mi hai but ishme jo value store hoga we number ke jgh NaN hoga
 // ye problem hai  js ka isliye check kr liya kro;
