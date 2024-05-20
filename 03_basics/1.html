@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent">
+    <div class="day">Monday</div>
+    <div class="day">tuesday</div>
+    <div class="day">wednesday</div>
+    <div class="day">thursday</div>
+
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent')
+    console.log(parent)
+    console.log(parent.children)//html collection array like element;
+    console.log(parent.children[1].innerHTML)
+    //for appling for each or map we have to convert it into array but basic for loop will apllicabe for all-array,htmlcollection,nodelist
+    // for(let i=0;parent.children.length;i++){
+    //     console.log(parent.children[i].innerHTML);
+    // }
+    parent.children.style.color="orange"
+    parent.log(parent.firstElementChild);
+</script>
+</html>
