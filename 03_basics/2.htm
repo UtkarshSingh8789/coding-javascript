@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert('owl clicked')
+    // })//best approch ;
+    //another method;
+    //attackEvent()
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log(e)
+    },false/*ye default hota hai*/)
+    //type,timestamp,defaultPrevented,target,toElement,srcElement,currentTarget,clientX,clientY,screenX,screenY ye sb ke baare me pdh lena
+    //alt key,ctrlKey,shift key;
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log('clicked inside the url')
+    },false/*ye default hota hai*/)
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('clicked owl')
+    // },false/*ye default hota hai*/)//event propagation do mode me hota hai agr false to bubbling mode and agr true to capturing mode;
+    // //agr owl pe clicked kreng to in case of bubbling mode phle clicked owl print hoga and then clickked insde url
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log('owl')
+        e.stopPropagation()//ishme ab buuble upr nhi jaayeg only output owl clicked;
+    },false/*ye default hota hai*/)
+    //main chahtu hu ki agr humlog ggooofle pe click kre toh we open nah ho ya ushko google ke site pe nah le jaye;
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log('clicked inside google')
+    },false)
+    // humlog chte hai ki image pe click kre aur we gayb hojaye;
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //     console.log(e.target.parentNode)//humko pura li remove krna hai..
+    //     let removeIt=e.target.parentNode
+    //     removeIt.remove() //ek aur trika hai
+    //     // removeIt.parentNode.removeChild(removeIt)//removeIt.parentNode humlog ko rel dega;
+    //     //problem ye aaya jb humlog google ke pass click krenge means list item pe click toh pura gayb hojayega;
+    //     //kyuki li ka prent ul hence pura gayb;
+
+    // })
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName)//humko pura li remove krna hai..
+        if(e.target.tagName==='IMG'){
+        let removeIt=e.target.parentNode
+        removeIt.remove() 
+        }//ek aur trika hai
+        // removeIt.parentNode.removeChild(removeIt)//removeIt.parentNode humlog ko rel dega;
+        //problem ye aaya jb humlog google ke pass click krenge means list item pe click toh pura gayb hojayega;
+        //kyuki li ka prent ul hence pura gayb;
+        
+    })
+</script>
+</html>
