@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log('hitesh')
+    // }, 2000)//set time out bolta hai itna time do ushke baad ek kaam kaapa krdunga
+    //whi set interval bota hai ki ek interval do utna interval pe main kaam repeat krunga;
+    const sayUtkarsh=function(){
+        console.log('utkarsh')
+    }
+    // document.querySelector('h1').innerHtml
+    // ="best java script"//change hogya lkin humlog chahte hai kuch second baad ho;
+    const changeText=function(){
+        document.querySelector('h1').innerHTML="best js series"
+    }
+    // setTimeout(changeText,2000)
+    const changeMe=setTimeout(changeText,2000)
+    //agr humlog ko event rokna hotoh,mtlb 2 second ke phle stop press kre to we chai aur code hi rhe
+    //clearTimeout//ishme humko setTimeout ka refrence chaiye isliye constant me setTimeout ko store kr rhe
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+    
+</script>
+</html>

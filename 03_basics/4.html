@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // const sayName=function(){
+    //     console.log("Utkarsh")
+    // }
+    // setInterval(sayName,5000)
+    // ishke andr humlog parameter bhi de skte hai;
+    const sayName=function(str){
+        console.log(str)
+    }
+    // clearInterval(interval)
+    // lkin chahte hai ki start dbaye to name print hona start hojaye aur agr stop daale to stop hojaye
+    const interval=setInterval(sayName,1000,"utkarsh")
+    // document.querySelector('#start').addEventListener('click',function(){
+    //     interval
+    //     console.log('START')
+    // })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(interval)
+        console.log('STOPPED')
+    })
+</script>
+</html>
