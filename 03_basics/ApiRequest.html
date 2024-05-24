@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello!</h1>
+</body>
+<script>
+    const requestURL='https://api.github.com/users/UtkarshSingh8789'
+    const xhr= new XMLHttpRequest()/*ishke through data request send hota hai*/
+    xhr.open('GET',requestURL)// jaise hi humlog request bhjenge state change hota hai ushko continuously aise monitor
+    //continuousy monitor krne ke liye;
+    xhr.onreadystatechange=function(){
+    console.log(xhr.readyState)
+    }
+    xhr.send()//ye open ko call krega
+</script>
+</html>
