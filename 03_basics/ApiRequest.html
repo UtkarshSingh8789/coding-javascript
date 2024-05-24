@@ -15,7 +15,12 @@
     //continuousy monitor krne ke liye;
     xhr.onreadystatechange=function(){
     console.log(xhr.readyState)
+    if(xhr.readyState===4){
+        const data=JSON.parse(this.responseText)
+        console.log(typeof data)
+        console.log(data.followers)//undefined aarha hai;//kyuki data ky type string ushko hmlog ko object/JSON me convert krna hoga
     }
-    xhr.send()//ye open ko call krega
+    }
+    xhr.send()
 </script>
 </html>
