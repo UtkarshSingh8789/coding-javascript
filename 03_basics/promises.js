@@ -104,7 +104,7 @@ async function consumePromise5(){
 consumePromise5()
 // async function getAllUsers(){
 //     try{
-//         const response=noeawait fetch('https://api.github.com/users/UtkarshSingh8789')
+//         const response=await fetch('https://api.github.com/users/UtkarshSingh8789')
 //         const data=await response.json()
 //         console.log(data)//dekho is code me koi glti nhi hai phir bhi nhi kr rha kyuki humlog ko lgta hai bs network request data reques krne me hi time lgta jbki isme bh lg rha isliye isme bhi await lgayenge
 //     } catch(error){
