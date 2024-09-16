@@ -33,7 +33,7 @@ function doOperation(a, b, op) {
     return op(a, b)
 }
   
-console.log(sum(1, 2))
+// console.log(sum(1, 2))
 //APPROCH-2;
 function sum(a, b) {
     return a + b;
@@ -54,12 +54,12 @@ function divide(a, b) {
 function doOperation(a, b, op) {
     return op(a, b)
 }
-console.log(doOperation(1, 2, sum))//function ko as a argumenet pass krrhe hai;
+// console.log(doOperation(1, 2, sum))//function ko as a argumenet pass krrhe hai;
 
 // asynchronous code;
 const fs=require("fs");
 function print(err,data){
-    console.log(data)
+    // console.log(data)
 }
 //fs.readFile("a.txt","utf-8",print);//asynchronously ye argument me ekcall back le rha hai;
 // jb reading hojayega to print function call hoga;
@@ -94,15 +94,15 @@ function print(err,data){
 
 console.log("hii");
 function timeout(){
-    console.log("click on the button")
+    // console.log("click on the button")
 }
 setTimeout(timeout,1000)//asynchronously run krta hai ye;
-console.log("welcome to loop");
+// console.log("welcome to loop");
 let c=0;
 for(let i=0;i<100000;i++){
     c++;//it willl take 2-3 second;
 }
-console.log("hello sir how are you");
+// console.log("hello sir how are you");
 
 
 // dekho is case me kya hoga;
@@ -116,7 +116,28 @@ console.log("hello sir how are you");
 //3-hello sir how are you;
 //and last me click on the button;
 
+// promisified version of readFILe;
 
+function readTheFile(resolve,reject){
+    fs.readFile("a.txt","utf-8",function(err,data){
+        if(err){
+            reject("file not found")
+        }
+        else{
+            resolve(data)
+        }
+    })
+}
+function read(){
+    return new Promise(readTheFile);
+}
+let p=read();
+function callback(contents){
+    console.log(contents)
+}
+p.then(callback).catch(function(e){
+    console.log(e)
+})
 
 
 
